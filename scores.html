@@ -4,7 +4,7 @@
     <meta charset = "UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scores</title>
-    <link rel="simon_icon" href="favicon.ico" />
+    <link rel="icon" href="favicon.ico" />
 
     <link rel="stylesheet" href="main.css" />
 
@@ -24,16 +24,16 @@
         
                 <menu class = "navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link active" href= "index.html">Home</a></li>
+                    <a class="nav-link" href= "index.html">Home</a></li>
                     
                     <li class="nav-item">
-                        <a class="nav-link active" href = "play.html">Play</a></li>
+                        <a class="nav-link" href = "play.html">Play</a></li>
                     
                         <li class="nav-item">
                             <a class="nav-link active" href = "scores.html">Scores</a></li>
                             
                             <li class="nav-item">
-                                <a class="nav-link active" href = "about.html">About</a></li>
+                                <a class="nav-link" href = "about.html">About</a></li>
                 </menu>
             </nav>
             <hr />
@@ -44,26 +44,28 @@
                 <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th>Scores</th>
-                    <th>Dates</th>
+                    <th>Score</th>
+                    <th>Date</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>George Washington</td>
-                    <td>13</td>
-                    <td>Julyl 4, 1776</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Abraham Lincoln</td>
-                    <td>34</td>
-                    <td>April 9, 1865</td>
-                </tr>
-            </tbody>
-        </table>
-    </main>
+            <tbody id="scores"></tbody>
+            </table>
+            </main>
+                <!-- <tr> -->
+                    <!-- <td>1</td> -->
+                    <!-- <td>George Washington</td> -->
+                    <!-- <td>13</td> -->
+                    <!-- <td>Julyl 4, 1776</td> -->
+                <!-- </tr> -->
+                <!-- <tr> -->
+                    <!-- <td>2</td> -->
+                    <!-- <td>Abraham Lincoln</td> -->
+                    <!-- <td>34</td> -->
+                    <!-- <td>April 9, 1865</td> -->
+                <!-- </tr> -->
+            <!-- </tbody> -->
+        <!-- </table> -->
+    <!-- </main> -->
     <footer class="bg-dark text-dark text-muted">
         <div class="container-fluid">
 
@@ -74,5 +76,7 @@
         href="https://github.com/ammonelzinga/simon">It's on github</a>
             </div>
     </footer>
+
+    <script src="scores.js"></script>
     </body>
     </html>
