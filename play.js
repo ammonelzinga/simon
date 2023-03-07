@@ -1,8 +1,8 @@
 const btnDescriptions = [
-    { file: 'sound1.mp3', hue: 120}, 
-    {file: 'sound2.mp3', hue: 0}, 
-    {file: 'sound2.mp3', hue: 60}, 
-    {file: 'sound4.mp3', hue: 240}, 
+    { file: 'assets_sound1.mp3', hue: 120}, 
+    {file: 'assets_sound2.mp3', hue: 0}, 
+    {file: 'assets_sound2.mp3', hue: 60}, 
+    {file: 'assets_sound4.mp3', hue: 240}, 
 ];
 
 class Button {
@@ -73,7 +73,7 @@ class Game {
             } else {
                 this.saveScore(this.sequence.length - 1); 
                 this.mistakeSound.play();
-                await this.buttonDance();
+                await this.buttonDance(2);
             }
         }
     }
@@ -82,7 +82,7 @@ class Game {
         this.allowPlayer = false;
         this.playerPlaybackPos = 0; 
         this.sequence = [];
-        this.updateScore('nada');
+        this.updateScore('--');
         await this.buttonDance(1);
         this.addButton();
         await this.playSequence();
@@ -90,7 +90,7 @@ class Game {
     }
 
     getPlayerName(){
-        return localStorage.getItem('User Name') ?? 'Tron';
+        return localStorage.getItem('userName') ?? 'Tron';
     }
 
     async playSequence(){
@@ -102,7 +102,7 @@ class Game {
     }
 
     addButton() {
-        const btn = this.getRandombutton();
+        const btn = this.getRandomButton();
         this.sequence.push(btn); 
     }
 
@@ -132,6 +132,8 @@ class Game {
             scores = JSON.parse(scoresText);
         }
         scores = this.updateScores(userName, score, scores); 
+
+        localStorage.setItem('scores', JSON.stringify(scores)); 
     }
 
     updateScores(userName, score, scores) {
@@ -161,14 +163,14 @@ class Game {
 
 const game = new Game();
 
-function delay(millisceonds){
+function delay(milliseconds){
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(true);
-        }, milliseconds)
-    })
+        }, milliseconds);
+    });
 }
 
 function loadSound(filename) {
-    return new Audio('assets/' + filename); 
+    return new Audio(filename); 
 }
