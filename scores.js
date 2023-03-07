@@ -2,7 +2,7 @@ function loadScores() {
     let scores = [];
     const scoresText = localStorage.getItem('scores');
     if (scoresText) {
-        scores = JSON.parse(scores.txt);
+        scores = JSON.parse(scoresText);
     }
 
 
@@ -26,7 +26,7 @@ if (scores.length) {
         rowEl.appendChild(scoreTdEl);
         rowEl.appendChild(dateTdEl); 
 
-        tableBodyEl.appendChild(El);
+        tableBodyEl.appendChild(rowEl);
     }
 } else {
     tableBodyEl.innerHTML = '<tr><td colSpan=4>Come be the instant numba one</td></tr>'; 
